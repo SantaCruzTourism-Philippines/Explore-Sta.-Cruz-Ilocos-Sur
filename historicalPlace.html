@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historical - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/placestogo.css">
+
+</head>
+<body>
+
+ <!-- Navbar -->
+ <header class="main-header" style="background-image:url(assets/mainHeaderBg1.png); background-repeat:no-repeat; background-size: cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#"><u>Attractions</u></a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html">Fine Sand Beaches</a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html">Mangrove Farms</a>
+            <a href="scmunicipalHall.html">Other Facilities</a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html">Churches</a>
+            <a href="waterfalls.html">Waterfalls</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html"><u>Historical Tourism</u></a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <a href="townProducts.html">Town Products</a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html" class="active">Daytrips</a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
+
+<!-- ✅ Hero section with ID added -->
+<section id="hero-section" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 id="main-title">Historical Places</h1>
+      <p id="main-description" class="descriptions">
+        Built with artistry that comes from the past and viewed to the present.
+      </p>
+      <div class="btns">
+        <button class="read-more">Google View</button>
+        <button class="view-more">View More</button>
+        </div>
+    </div>
+    <div>
+      <img src="assets/churchHero.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+      <div class="hero-thumbnails">
+        <img src="assets/rakrakFalls.jpg" alt="Rakrak" onclick="changeMainContent(0)">
+        <img src="assets/lipitFalls.jpg" alt="Lipit" onclick="changeMainContent(1)">
+        <img src="assets/dalumpinasFalls.jpg" alt="Dalumpinas" onclick="changeMainContent(2)">
+        <img src="assets/falls.jpg" alt="Kagutungan" onclick="changeMainContent(3)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <div class="choices">
+    <div onclick="changeMainContent(0)">
+      <img src="assets/kiosk.jpg" alt="history 1" />
+      <h1>Spanish Architecture Inspired Kiosk</h1>
+    </div>
+    <div onclick="changeMainContent(1)">
+      <img src="assets/genLunaMonument.jpg" alt="history 2" />
+      <h1>Gen. Antonio Luna Monument</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
+      <h2>Historical Places</h2>
+      <p>Click Your Desired Destination For Directions and Map</p>
+    </div>
+    <img src="">
+  </div>
+</div>
+
+<div id="viewmore-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-viewmore">&times;</span>
+    <h2>View more about Sta. Cruz Historical Places</h2>
+    <ul></ul>
+  </div>
+</div>
+
+<script>
+  const titles = [
+    "Spanish Architecture Inspired Kiosk",
+    "Gen. Antonio Luna Monument",
+    ""
+  ];
+
+  const descriptions = [
+  "This historical tourism site was constructed in 1939 and was fashioned after a spanish architectural design. Aftetr being a little worn out from years of damage, it was renovated in 2000 under the administration of mayor Terisita C. Valle. At the northern portion, about ten meters from the kiosk, were markers bearing the names of the brave veterans of World War II.",
+  "This 85-year old structure was built in 1934 during the administration ofMayor Manuel S. Josue. A handwritten inscription on its western side reveals that the statue is a memento from the Governor Alejandro Quirolgico, Ilocos Sur Provincial Governor, built through the help of the town of Sta. Cruz and the Loyal Sons and 'Daughters' Association."
+    ];
+
+  const viewMoreContents = [
+    "Replica of Mexico’s basilica, with stained glass and a retablo.",
+    "A peaceful site for worshipers and the faithful in Santa Cruz."
+  ];
+
+  const googleLinks = [
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Kagutungan+Falls,+3G52%2BMQH,+Santa+Cruz,+Ilocos+Sur/@17.0691519,120.4591178,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f0fac3eb261:0x624d6fbcb52a1d2e!2m2!1d120.5034039!2d17.0591171!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Dalumpinas+Falls,+2FCV%2BR8P,+Santa+Cruz,+Ilocos+Sur/@17.0194843,120.3977199,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e142d759c90f:0x590fe3ade1adf5bd!2m2!1d120.4933395!2d17.0220863!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Dalumpinas+Falls,+2FCV%2BR8P,+Santa+Cruz,+Ilocos+Sur/@17.0194843,120.3977199,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e142d759c90f:0x590fe3ade1adf5bd!2m2!1d120.4933395!2d17.0220863!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Kagutungan+Falls,+3G52%2BMQH,+Santa+Cruz,+Ilocos+Sur/@17.0691519,120.4591178,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f0fac3eb261:0x624d6fbcb52a1d2e!2m2!1d120.5034039!2d17.0591171!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+  ];
+
+  const images = [
+      "assets/kiosk.jpg",
+      "assets/genLunaMonument.jpg",
+      "assets/dalumpinasFalls.jpg",
+      "assets/falls.jpg"
+    ];
+
+  const thumbnails = [
+    ["assets/thumbnails/kiosk1.jpg", "assets/thumbnails/kiosk2.jpg", "assets/thumbnails/kiosk3.jpg"],
+    ["assets/thumbnails/genLuna.jpg", "assets/thumbnails/genLuna1.jpg", "assets/thumbnails/genLuna2.jpg", "assets/thumbnails/genLuna3.jpg"],
+    ["assets/thumbnails/d1.jpg", "assets/thumbnails/d1.jpg", "assets/thumbnails/d1.jpg", "assets/thumbnails/d1.jpg"],
+    ["assets/thumbnails/k1.jpg", "assets/thumbnails/k2.jpg", "assets/thumbnails/k3.jpg", "assets/thumbnails/k4.jpg"]
+  ];
+
+  // ✅ New: Hero background images
+  const heroBackgrounds = [
+      "assets/kiosk.jpg",
+      "assets/genLunaMonument.jpg"
+    ];
+
+  let currentIndex = 0;
+
+  function changeMainContent(index) {
+  currentIndex = index;
+  document.getElementById('main-title').innerText = titles[index];
+  document.getElementById('main-description').innerText = descriptions[index];
+  document.getElementById('main-image').src = images[index];
+
+  // Change hero background
+  document.getElementById("hero-section").style.background = `url('${heroBackgrounds[index]}') no-repeat center center / cover`;
+
+  // Smooth scroll to hero section
+  document.getElementById("hero-section").scrollIntoView({ behavior: "smooth" });
+
+  // Update thumbnails
+  const thumbnailContainer = document.querySelector('.hero-thumbnails');
+  thumbnailContainer.innerHTML = "";
+  thumbnails[index].forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `Thumb ${i + 1}`;
+    img.style.cssText = "width:80px;height:60px;object-fit:cover;margin-right:10px;border:2px solid white;border-radius:6px;cursor:pointer;";
+    img.onclick = () => document.getElementById('main-image').src = src;
+    thumbnailContainer.appendChild(img);
+  });
+}
+
+  document.querySelector(".read-more").addEventListener("click", () => {
+    window.open(googleLinks[currentIndex], "_blank");
+  });
+
+  const viewMoreModal = document.getElementById("viewmore-modal");
+  const viewMoreBtn = document.querySelector(".view-more");
+  const closeViewMore = document.querySelector(".close-viewmore");
+  const modalContent = viewMoreModal.querySelector("div");
+
+  viewMoreBtn.addEventListener("click", () => {
+    modalContent.innerHTML = `<p><strong><h1>${titles[currentIndex]}</h1></strong>: ${viewMoreContents[currentIndex]}</p>`;
+    viewMoreModal.style.display = "block";
+  });
+
+  closeViewMore.addEventListener("click", () => {
+    viewMoreModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === viewMoreModal) {
+      viewMoreModal.style.display = "none";
+    }
+  });
+
+  // Initial load
+  changeMainContent(0);
+  
+  function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("active");
+}
+</script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

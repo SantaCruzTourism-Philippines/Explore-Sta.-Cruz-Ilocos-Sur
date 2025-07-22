@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Town Products - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/placestogo.css">
+  <style>
+    .highlight-section {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(to right, #1e33ad, #2196f3);
+      color: white;
+    }
+    .highlight-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .highlight-section p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    @media(max-width: 400px){
+      .highlight-section h2{
+        font-size:1rem;
+      }
+      .highlight-section p{
+        font-size:.9rem;
+      }
+    }
+    @media(max-width: 300px){
+      .highlight-section h2{
+        font-size:1.2rem;
+      }
+      .highlight-section p{
+        font-size:.5rem;
+      }
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      background: #f0f8ff;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+    }
+    .product-info {
+      padding: 1rem;
+    }
+    .product-info h3 {
+      color: #1e33ad;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .product-info p {
+      font-size: 0.95rem;
+      color: #333;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="main-header" style="background-image:url('assets/mainHeaderBg1.png'); background-size:cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#">Attractions</a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html">Fine Sand Beaches</a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html">Mangrove Farms</a>
+            <a href="scmunicipalHall.html">Other Facilities</a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html">Churches</a>
+            <a href="waterfalls.html">Waterfalls</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <a href="townProducts.html"><u>Town Products</u></a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html">Daytrips</a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
+
+<section class="highlight-section">
+  <h2>Discover the Heart of Santa Cruz Through Its Products</h2>
+  <p>Our town is proud of its rich craftsmanship and culinary heritage. From artisan baskets to delicious delicacies, support local by exploring our best offerings.</p>
+</section>
+
+<section class="product-grid">
+  <div class="product-card">
+    <img src="assets/products/weavedHandBag.png" alt="Weaved Bags">
+    <div class="product-info">
+      <h3>Weaved Bags</h3>
+      <p>BEAUTIFUL, QUALITY BAGS THAT COMBINE TRADITIONAL AND MODERN DESIGNS</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/bagoongremoved.png" alt="bagoong">
+    <div class="product-info">
+      <h3>Bagoong Alamang</h3>
+      <p>Our Bagoong Alamang is a savory condiment made from small salted and fermented shrimp, bursting with flavor. This traditional Filipino dish adds a rich, umami taste to your meals, making it perfect for pairing with rice, vegetables, or as a base for sauces. Enjoy the depth of flavor and authenticity it brings to your favorite dishes!</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/adobongMani.png" alt="Ceramic Jars">
+    <div class="product-info">
+      <h3>Adobong Mani</h3>
+      <p>Adding a flavorful twist to plain, natural peanuts by infusing them with a touch of culinary creativity.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/bananachip.png" alt="Banana Chips">
+    <div class="product-info">
+      <h3>Banana Chips</h3>
+      <p>A start-up business from Barangay Coscosnong, aims to provide sweet and enjoyable delicacy.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/tunaRemoved.png" alt="Bamboo Crafts">
+    <div class="product-info">
+      <h3>Tuna Empanada</h3>
+      <p>Our Tuna Empanada is our One Town One Product, crafted with fresh, local ingredients. Filled with a savory mix of tuna, carrots, raisins, cheese, potatoes, and a touch of salt, it delivers the perfect balance of savory and sweet in every bite. Fried to golden perfection, this empanada is not just a snack but a delightful meal that showcases our town's culinary traditions.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/seasalt.png" alt="Seasalt">
+    <div class="product-info">
+      <h3>Sea Salt</h3>
+      <p>made from pure sea water brine, rich in natural minerals and essential iodine. Perfect for enhancing flavor and supporting a healthy lifestyle.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/caneVinegar.png" alt="Cane Vinegar">
+    <div class="product-info">
+      <h3>Cane Vinegar</h3>
+      <p>Made from naturally fermented sugar cane, offering a rich, tangy flavor with a hint of sweetness. Perfect for marinades, dressings, and enhancing the taste of your favorite dishes.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/TomatoJam-removed.png" alt="tomatojam">
+    <div class="product-info">
+      <h3>Tomato Jam</h3>
+      <p>A plain slice of bread need a savory fillings, just like these tomato jams are perfect match for your plain breads.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/fruitBasket.jpg" alt="fruit Basket">
+    <div class="product-info">
+      <h3>Fruit Basket</h3>
+      <p>Our beautiful fruit basket is handcrafted from labtang, a local vine known for its durability and natural elegance. Perfect for showcasing your favorite fruits, this unique basket adds a touch of charm to any kitchen or dining space while supporting local craftsmanship. Ideal for gifts or personal use, it combines functionality with the beauty of traditional artistry.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/products/broom.png" alt="Brooms">
+    <div class="product-info">
+      <h3>Brooms</h3>
+      <p>expertly crafted using local materials from Sta. Cruz, Ilocos Sur. Made with sturdy wooden handles and natural fibers, they provide efficient sweeping for both indoor and outdoor use. Durable and made with care.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="bukayo">
+    <div class="product-info">
+      <h3>Bukayo/Bukarillo</h3>
+      <p>made from locally sourced brown sugar and freshly grated coconut meat, carefully fried to perfection. This sweet, chewy delicacy offers a wonderful balance of flavors and textures, making it a perfect snack or dessert.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="tuna sisig">
+    <div class="product-info">
+      <h3>Tuna Sisig</h3>
+      <p>a flavorful and convenient dish, expertly prepared and frozen for your convenience. Packed and ready to eat, Tuna Sisig features tender tuna combined with traditional spices and seasonings for a savory, satisfying meal. Simply heat and enjoy a taste of comfort food in no time!</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="Tuna pie">
+    <div class="product-info">
+      <h3>Tuna Pie</h3>
+      <p>Our Tuna Pie is a tasty rectangle-shaped pastry filled with the same savory mix as our Tuna Empanada. With fresh tuna, carrots, raisins, cheese, potatoes, and a hint of salt, it offers a delicious snack or meal in every bite!</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="Tuna siomai">
+    <div class="product-info">
+      <h3>Tuna Siomai</h3>
+      <p>Our Tuna Siomai is a delicious and convenient treat, expertly prepared and frozen for your convenience. Packed and ready to cook, these tender dumplings are filled with savory tuna and spices, making them perfect for a quick meal or snack. Simply steam or fry for a delightful taste of tradition in no time!</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="spicy unas vinegar">
+    <div class="product-info">
+      <h3>Spicy Unas Vinegar</h3>
+      <p>Our Spicy Cane Vinegar is a flavorful blend of fermented sugar cane and spices, delivering a zesty kick to your dishes. Perfect for marinades, dressings, or dipping sauces, this vinegar adds a delightful heat and tang that enhances the taste of any meal.</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="Ceramic Jars"> <!--by changing the assets filepath you can change or add the image -->
+    <div class="product-info">
+      <h3>Papaya Pickles</h3>
+      <p>Our Papaya Pickles are a delicious blend of grated unripe papaya mixed with organic coconut sap vinegar and sweetened with organic sweetener. Infused with carrots, ginger, garlic, raisins, bell pepper, black pepper, and salt, this tangy and crunchy condiment adds a burst of flavor to any dish. Enjoy it as a side, topping, or snack for a delightful taste of tradition!</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product3.jpg" alt="soymilk">
+    <div class="product-info">
+      <h3>Kagutungan Soy Milk</h3>
+      <p>Our Soy Milk is a creamy, nutritious beverage made from high-quality organic soybeans, with just the right amount of sugar and salt. Naturally dairy-free and rich in protein, it's a delicious plant-based alternative perfect for enjoying chilled, adding to smoothies, or using in cooking and baking. Enjoy this wholesome choice that supports a healthy lifestyle!</p>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="assets/product1.jpg" alt="vegetables">
+    <div class="product-info">
+      <h3>Straight from Farm Vegetables</h3>
+      <p>Nothing beats the taste of freshly picked vegetables in every dish, a big thanks to our local farmers for their hard work in growing these wholesome crops.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function openModal(title, description, imageSrc) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalDescription").textContent = description;
+  document.getElementById("modalImage").src = imageSrc;
+  document.getElementById("productModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("productModal").style.display = "none";
+}
+
+
+  function toggleMenu() {
+    document.querySelector(".navbar").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

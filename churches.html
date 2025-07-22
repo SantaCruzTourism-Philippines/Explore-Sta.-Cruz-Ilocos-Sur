@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Churches - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/placestogo.css">
+
+</head>
+<body>
+
+ <!-- Navbar -->
+ <header class="main-header" style="background-image:url(assets/mainHeaderBg1.png); background-repeat:no-repeat; background-size: cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#"><u>Attractions</u></a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html">Fine Sand Beaches</a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html">Mangrove Farms</a>
+            <a href="scmunicipalHall.html">Other Facilities</a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html"><u>Churches</u></a>
+            <a href="waterfalls.html">Waterfalls</a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <a href="townProducts.html">Town Products</a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html">Daytrips</a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
+
+<!-- ✅ Hero section with ID added -->
+<section id="hero-section" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 id="main-title">Churches</h1>
+      <p id="main-description" class="descriptions">
+        The second southernmost town of the province of Laguna and in the Philippines, Santa Cruz has a diverse, beautiful past.
+      </p>
+      <div class="btns">
+      <button class="read-more">Google View</button>
+      <button class="view-more">View More</button>
+      </div>
+    </div>
+    <div>
+      <img src="assets/churchHero.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+      <div class="hero-thumbnails">
+        <img src="assets/olgChurch.jpg" alt="Guadalupe" onclick="changeMainContent(0)">
+        <img src="assets/ourladyofFatima.jpg" alt="Fatima" onclick="changeMainContent(1)">
+        <img src="assets/ourLadyofImmaculateConception.jpg" alt="Immaculate" onclick="changeMainContent(2)">
+        <img src="assets/ourLadyofMtCarmel.jpg" alt="Mt. Carmel" onclick="changeMainContent(3)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <div class="choices">
+    <div onclick="changeMainContent(0)">
+      <img src="assets/olgChurch.jpg" alt="churches 1" />
+      <h1>Our Lady Of Guadalupe</h1>
+    </div>
+    <div onclick="changeMainContent(1)">
+      <img src="assets/ourladyofFatima.jpg" alt="churches 2" />
+      <h1>Our Lady Of Fatima</h1>
+    </div>
+    <div onclick="changeMainContent(2)">
+      <img src="assets/ourLadyofImmaculateConception.jpg" alt="churches 3" />
+      <h1>Our Lady Of Immaculate Conception</h1>
+    </div>
+    <div onclick="changeMainContent(3)">
+      <img src="assets/ourLadyofMtCarmel.jpg" alt="churches 4" />
+      <h1>Our Lady Of Mt. Carmel</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
+      <h2>Churches</h2>
+      <p>Click Your Desired Destination For Directions and Map</p>
+    </div>
+    <img src="">
+  </div>
+</div>
+
+<div id="viewmore-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-viewmore">&times;</span>
+    <h2>More About Churches</h2>
+    <ul></ul>
+  </div>
+</div>
+
+<script>
+  const titles = [
+    "Our Lady Of Guadalupe",
+    "Our Lady Of Fatima",
+    "Our Lady Of Immaculate Conception",
+    "Our Lady Of Mt. Carmel"
+  ];
+
+  const descriptions = [
+    "Built after the image of the Basilica of Our Lady of Guadalupe in Mexico City, the church of the Our Lady of Guadalupe in Sevilla, Sta. Cruz, Ilocos Sur is an architectural marvel. It has a crown which hosts an image of angels. The grand altarpiece or retablo is also inspired by the altarpiece of the Basilica in Mexico City. The oven-baked, stained-glass windows feature the 20 mysteries of the Holy Rosary.",
+    "The Our Lady of Fatima Church in Bacsayan, Sta. Cruz, Ilocos Sur is inspired by the Sanctuary of our Lady of the Rosary of Fatima in Portugal. The church has a tall centralized tower measuring __ meters surmounted by a crown and an illuminated cross. A statue of Our Lady of Fatima dressed in white is placed in a niche above the main entrance of the church.",
+    "Local tourists who wish to engage in a historical and religious sojourn often stop by the Our Lady of the Immaculate Conception Church located in Poblacion Sur, Sta. Cruz, Ilocos Sur. Built between the 1700s and 1800s, it is said that the church was constructed through forced labor. Men and women alike hauled slabs of stones in order to shape the structure. The church has some aspects of Romanesque Revival style; its windows and doors have semicircular arches while its twin towers are square. Large, circular images of the mysteries of the rosary adorn the ceilings while frames of pictures depicting the stations of the cross hang below the Cathedral-type windows. The lighting source comes from wrought iron droplights.",
+    "The church of Our Lady of Mt. Carmel in barangay Capariaan is a replica of the Our Lady of Mt. Carmel Church located in Denver, Colorado. The Romanesque Revival style church has semicircular arches in its windows and door openings, transom windows and twin square towers. It also has stained glass windows and features a seven-meter statue of Our Lady of Mt. Carmel giving the scapular to St. Simon Stock."
+  ];
+
+  const viewMoreContents = [
+    "It was built in 2020 by a private devotee of the church. It is fully air conditioned and can seat a total of 1,000 people. Since its construction, pilgrims from across the region, as well as other neighboring regions, include the church in their pilgrimage. It has also gained reputation as the favored church for weddings. It is the only church of Our Lady of Guadalupe in Ilocos Sur. \n Attractions, Activities, Amenities. The main activity in the site includes church visit and sightseeing. A tourist information logbook is placed near the door. No fees are collected. The church shares its parking space with the adjacent Our Lady of Guadalupe Academy.  Accommodation/s No accommodation is available near the site; however, there are resorts nearby at a distance of four kilometers. Access The church is located at the western portion of the national highway; therefore, it is accessible to almost all types of land transportation.",
+    "Inside, the ceiling is adorned with large murals, one of which depicts the Holy Trinity crowning Mary. The windows, made of stained-glass, depict the different titles of the Virgin Mary. In the middle of the altar is a statue of Our Lady of Fatima and in her feet are the statues of the three little shepherds Lúcia, Jacinta, and Francisco.",
+    "Structure-wise, the church is the same as it has been in the 1930’s. However, natural disasters prompted the church administrators to rehabilitate parts certain parts so that it can continue to serve its congregation. Church visits and sightseeing are the main activities in this site. Some pilgrims often include the church in their pilgrimage during the Lenten season and long holiday breaks. A tourist information logbook is placed near the door. No fees are collected.",
+    "Inside the church, the stained-glass windows detail the titles given to the Virgin Mary such as Our Lady of Fatima, Our Lady of Peñafrancia, Our Lady of Lourdes and Mother of God, among others. At the center of the altar is Jesus Christ on the cross and on His sides, Virgin Mary and St. Joseph. The church has a seating capacity of __ people. \n (<b> Attractions, Activities, Amenities.</b>)\n Church visits and sightseeing are the main activities in the site. A tourist information logbook is placed near the door. No fees are collected at present. The church has no public restroom. A small parking space is available inside the gate.\n <b>Access</b>\n The church is located at the eastern portion of the national highway; therefore, it is accessible to almost all types of land transportation. "
+  ];
+
+  const googleLinks = [
+    "https://www.google.com/maps/dir/Sta.+Cruz...Guadalupe",
+    "https://www.google.com/maps/dir/Sta.+Cruz...Fatima",
+    "https://www.google.com/maps/dir/Sta.+Cruz...Immaculate",
+    "https://www.google.com/maps/dir/Sta.+Cruz...MtCarmel"
+  ];
+
+  const images = [
+    "assets/olgChurch.jpg",
+    "assets/ourladyofFatima.jpg",
+    "assets/ourLadyofImmaculateConception.jpg",
+    "assets/ourLadyofMtCarmel.jpg"
+  ];
+
+  const thumbnails = [
+    ["assets/thumbnails/olgp1.jpg", "assets/thumbnails/olgp2.jpg", "assets/thumbnails/olgp3.jpg", "assets/thumbnails/olgp4.jpg"],
+    ["assets/thumbnails/olf1.jpg", "assets/thumbnails/olf2.jpg", "assets/thumbnails/olf3.jpg", "assets/thumbnails/olf4.jpg"],
+    ["assets/thumbnails/olic1.jpeg", "assets/thumbnails/olic2.jpeg", "assets/thumbnails/olic3.jpeg", "assets/thumbnails/olic4.jpeg"],
+    ["assets/thumbnails/olmc1.jpg", "assets/thumbnails/olmc2.jpg", "assets/thumbnails/olmc3.jpg", "assets/thumbnails/olmc4.jpg"]
+  ];
+
+  // ✅ New: Hero background images
+  const heroBackgrounds = [
+    "assets/olgChurch.jpg",
+    "assets/ourladyofFatima.jpg",
+    "assets/ourLadyofImmaculateConception.jpg",
+    "assets/ourLadyofMtCarmel.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  function changeMainContent(index) {
+  currentIndex = index;
+  document.getElementById('main-title').innerText = titles[index];
+  document.getElementById('main-description').innerText = descriptions[index];
+  document.getElementById('main-image').src = images[index];
+
+  // Change hero background
+  document.getElementById("hero-section").style.background = `url('${heroBackgrounds[index]}') no-repeat center center / cover`;
+
+  // Smooth scroll to hero section
+  document.getElementById("hero-section").scrollIntoView({ behavior: "smooth" });
+
+  // Update thumbnails
+  const thumbnailContainer = document.querySelector('.hero-thumbnails');
+  thumbnailContainer.innerHTML = "";
+  thumbnails[index].forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `Thumb ${i + 1}`;
+    img.style.cssText = "width:80px;height:60px;object-fit:cover;margin-right:10px;border:2px solid white;border-radius:6px;cursor:pointer;";
+    img.onclick = () => document.getElementById('main-image').src = src;
+    thumbnailContainer.appendChild(img);
+  });
+}
+
+  document.querySelector(".read-more").addEventListener("click", () => {
+    window.open(googleLinks[currentIndex], "_blank");
+  });
+
+  const viewMoreModal = document.getElementById("viewmore-modal");
+  const viewMoreBtn = document.querySelector(".view-more");
+  const closeViewMore = document.querySelector(".close-viewmore");
+  const modalContent = viewMoreModal.querySelector("div");
+
+  viewMoreBtn.addEventListener("click", () => {
+    modalContent.innerHTML = `<p><strong><h1>${titles[currentIndex]}</h1></strong>: ${viewMoreContents[currentIndex]}</p>`;
+    viewMoreModal.style.display = "block";
+  });
+
+  closeViewMore.addEventListener("click", () => {
+    viewMoreModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === viewMoreModal) {
+      viewMoreModal.style.display = "none";
+    }
+  });
+
+  // Initial load
+  changeMainContent(0);
+
+  //responsiveness of the navbar
+
+  function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

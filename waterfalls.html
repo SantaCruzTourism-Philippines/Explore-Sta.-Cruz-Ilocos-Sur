@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waterfalls - Santa Cruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/placestogo.css">
+
+</head>
+<body>
+
+ <!-- Navbar -->
+ <header class="main-header" style="background-image:url(assets/mainHeaderBg1.png); background-repeat:no-repeat; background-size: cover;">
+  <div class="logo">
+    <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+    <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+  
+    <div class="dropdown">
+      <a href="#">Attractions</a>
+      <div class="dropdown-content">
+  
+        <!-- Nested Dropdown: Potential -->
+        <div class="dropdown-sub">
+          <a href="#">Potential Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="beaches.html">Fine Sand Beaches</a>
+            <a href="greenhills.html">Greenhills</a>
+            <a href="mangroveFarms.html">Mangrove Farms</a>
+            <a href="scmunicipalHall.html">Other Facilities</a>
+          </div>
+        </div>
+  
+        <!-- Nested Dropdown: Emerging -->
+        <div class="dropdown-sub">
+          <a href="#">Emerging Tourist Spots ▸</a>
+          <div class="dropdown-sub-content">
+            <a href="churches.html">Churches</a>
+            <a href="waterfalls.html"><u>Waterfalls</u></a>
+            <a style="padding-bottom:100px;"  href="historicalPlace.html">Historical Tourism</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <a href="townProducts.html">Town Products</a>
+    <a href="hotelAndResorts.html">Hotel & Resorts</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="tourismCircuit.html" class="active">Daytrips</a>
+    <a href="index.html#about-footer">About Us</a>
+  </nav>
+  
+</header>
+
+<!-- ✅ Hero section with ID added -->
+<section id="hero-section" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 id="main-title">Waterfalls</h1>
+      <p id="main-description" class="descriptions">
+       The water that flows by the river, where it falls downstream around the mountains of Sta. cruz showing its beauty that helps local for there farmlands and attract tourist to come and enjoy the wonderful view hidden in the mountains.
+      </p>
+      <div class="btns">
+        <button class="read-more">Google View</button>
+        <button class="view-more">View More</button>
+      </div>
+    </div>
+    <div>
+      <img src="assets/churchHero.jpg" alt="Nature Main" style="height:350px;" class="main-img" id="main-image" />
+      <div class="hero-thumbnails">
+        <img class="thumb-images" src="assets/rakrakFalls.jpg" alt="Rakrak" onclick="changeMainContent(0)">
+        <img class="thumb-images" src="assets/lipitFalls.jpg" alt="Lipit" onclick="changeMainContent(1)">
+        <img class="thumb-images" src="assets/dalumpinasFalls.jpg" alt="Dalumpinas" onclick="changeMainContent(2)">
+        <img class="thumb-images" src="assets/falls.jpg" alt="Kagutungan" onclick="changeMainContent(3)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <div class="choices">
+    <div onclick="changeMainContent(0)">
+      <img src="assets/rakrakFalls.jpg" alt="Group of Falls" />
+      <h1>San Antonio Three Little Falls</h1>
+    </div>
+    <div onclick="changeMainContent(3)">
+      <img class="choices-images" src="assets/falls.jpg" alt="Falls 4" />
+      <h1>Kagutungan Falls</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div style="background: rgba(60, 122, 238, 0.8); border-radius:10px; padding: 10px;">
+      <h2>Falls</h2>
+      <p>Click Your Desired Destination For Directions and Map</p>
+    </div>
+    <img src="">
+  </div>
+</div>
+
+<div id="viewmore-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-viewmore">&times;</span>
+    <h2>More About Falls</h2>
+    <ul></ul>
+  </div>
+</div>
+
+<script>
+  const titles = [
+    "Rakrak Falls",
+    "Lipit Falls",
+    "Dalumpinas Falls",
+    "Kagutungan Falls"
+  ];
+
+  const descriptions = [
+      "Rakrak Falls is a hidden paradise in the heart of Santa Cruz, surrounded by dense foliage and echoing with nature’s symphony.",
+      "Lipit Falls offers a serene spot for quiet reflection, with gentle cascades and clear waters perfect for cooling off.",
+      "Dalumpinas Falls is a narrow yet powerful stream cutting through a rocky forest trail, popular among local hikers.",
+      "Escape the ordinary and dive into nature’s magic at Kagutungan Falls! Just a breezy 10-minute trek away, this pristine waterfall surrounded by towering trees and giant rocks promises a refreshing adventure. Take a dip in its clean, cool waters, or enjoy a picnic in one of its cozy cottages or spacious function hall. With comfort rooms, running water, and a grilling area — you’ll feel at home while soaking in paradise! For only ₱20, you're not just visiting — you're supporting local nature, too!"
+    ];
+
+  const viewMoreContents = [
+    "The San Antonio Triple Falls is a series of three waterfalls in close succession. The first two waterfalls, Lipit and Dalumpinas are low waterfalls while the third and last is the longest waterfall in Sta. Cruz – Rakrak Falls.Attractions, Activities, Amenities.The main activities in all three falls are swimming, sight-seeing, picnicking and trekking.Because the San Antonio Triple Falls is still classified as a potential tourism site, its facilities are not yet developed and the attractions and activities available are stillimited. Accommodation/s There are no available accommodations within the vicinity of the site; however, the nearest available accommodation is located just 8.2 km away. Access The road from the national highway up until the stream where the waterfalls flow is concrete. The short distance from the concreted road to Lipit falls is made of dirt but can be accessed by tricycle and private vehicles with a travel time of just five minutes.",
+    "The San Antonio Triple Falls is a series of three waterfalls in close succession. The first two waterfalls, Lipit and Dalumpinas are low waterfalls while the third and last is the longest waterfall in Sta. Cruz – Rakrak Falls.Attractions, Activities, Amenities.The main activities in all three falls are swimming, sight-seeing, picnicking and trekking.Because the San Antonio Triple Falls is still classified as a potential tourism site, its facilities are not yet developed and the attractions and activities available are stillimited. Accommodation/s There are no available accommodations within the vicinity of the site; however, the nearest available accommodation is located just 8.2 km away. Access The road from the national highway up until the stream where the waterfalls flow is concrete. The short distance from the concreted road to Lipit falls is made of dirt but can be accessed by tricycle and private vehicles with a travel time of just five minutes.",
+    "The San Antonio Triple Falls is a series of three waterfalls in close succession. The first two waterfalls, Lipit and Dalumpinas are low waterfalls while the third and last is the longest waterfall in Sta. Cruz – Rakrak Falls.Attractions, Activities, Amenities.The main activities in all three falls are swimming, sight-seeing, picnicking and trekking.Because the San Antonio Triple Falls is still classified as a potential tourism site, its facilities are not yet developed and the attractions and activities available are stillimited. Accommodation/s There are no available accommodations within the vicinity of the site; however, the nearest available accommodation is located just 8.2 km away. Access The road from the national highway up until the stream where the waterfalls flow is concrete. The short distance from the concreted road to Lipit falls is made of dirt but can be accessed by tricycle and private vehicles with a travel time of just five minutes.",
+    "An open function hall and cottages/ small huts with tables and chairs provide comfortable dining experience while basking in nature. A makeshift kitchen with a simple griller and a lavatory is also installed in one corner. Public restrooms and bathrooms for male and female and handwashing facilities are also set up. A Piso Wifi equipment, owned by a private entrepreneur, is placed to cater to tourists who need to post and share their snapshots immediately."
+  ];
+
+  const googleLinks = [
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Kagutungan+Falls,+3G52%2BMQH,+Santa+Cruz,+Ilocos+Sur/@17.0691519,120.4591178,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f0fac3eb261:0x624d6fbcb52a1d2e!2m2!1d120.5034039!2d17.0591171!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Dalumpinas+Falls,+2FCV%2BR8P,+Santa+Cruz,+Ilocos+Sur/@17.0194843,120.3977199,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e142d759c90f:0x590fe3ade1adf5bd!2m2!1d120.4933395!2d17.0220863!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Dalumpinas+Falls,+2FCV%2BR8P,+Santa+Cruz,+Ilocos+Sur/@17.0194843,120.3977199,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x3391e142d759c90f:0x590fe3ade1adf5bd!2m2!1d120.4933395!2d17.0220863!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/dir/Sta.+Cruz+Public+Market,+3FJ4%2BHHR,+National+Highway,+Santa+Cruz,+Ilocos+Sur/Kagutungan+Falls,+3G52%2BMQH,+Santa+Cruz,+Ilocos+Sur/@17.0691519,120.4591178,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x338e1e8ae26c3c85:0x7dcdfc81a12c78db!2m2!1d120.4571499!2d17.0812035!1m5!1m1!1s0x338e1f0fac3eb261:0x624d6fbcb52a1d2e!2m2!1d120.5034039!2d17.0591171!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+  ];
+
+  //images for the gallery choices
+  const images = [
+      "assets/rakrakFalls.jpg",
+      "assets/lipitFalls.jpg",
+      "assets/dalumpinasFalls.jpg",
+      "assets/falls.jpg"
+    ];
+
+    const thumbnails = [
+  [
+    { src: "assets/rakrakFalls.jpg", title: "Rakrak Falls",description:"Rakrak Falls is a hidden paradise in the heart of Santa Cruz, surrounded by dense foliage and echoing with nature’s symphony"},
+    { src: "assets/lipitFalls.jpg", title: "Lipit Falls",description:"Lipit Falls offers a serene spot for quiet reflection, with gentle cascades and clear waters perfect for cooling off"},
+    { src: "assets/dalumpinasFalls.jpg", title: "Dalumpinas Falls", description:"Dalumpinas Falls is a narrow yet powerful stream cutting through a rocky forest trail, popular among local hikers." }
+  ],
+  // ... other thumbnails array entries
+];
+
+  // ✅ New: Hero background images
+  const heroBackgrounds = [
+      "assets/rakrakFalls.jpg",
+      "assets/lipitFalls.jpg",
+      "assets/dalumpinasFalls.jpg",
+      "assets/falls.jpg"
+    ];
+
+  let currentIndex = 0;
+
+  function changeMainContent(index) {
+  currentIndex = index;
+
+  document.getElementById('main-title').innerText = titles[index];
+  document.getElementById('main-description').innerText = descriptions[index];
+  document.getElementById('main-image').src = images[index];
+  document.getElementById("hero-section").style.background = `url('${heroBackgrounds[index]}') no-repeat center center / cover`;
+
+  const thumbnailContainer = document.querySelector('.hero-thumbnails');
+  thumbnailContainer.innerHTML = "";
+
+  thumbnails[index].forEach((thumb, i) => {
+    const img = document.createElement('img');
+    img.src = thumb.src;
+    img.alt = thumb.title;
+    img.style.cssText = "width:80px;height:60px;object-fit:cover;margin-right:10px;border:2px solid white;border-radius:6px;cursor:pointer;";
+    img.onclick = () => {
+      document.getElementById('main-image').src = thumb.src;
+      document.getElementById('main-title').innerText = thumb.title;
+      document.getElementById('main-description').innerText = thumb.description;
+      document.getElementById("hero-section").style.background = `url('${thumb.src}') no-repeat center center / cover`;
+    };
+    thumbnailContainer.appendChild(img);
+  });
+}
+
+  document.querySelector(".read-more").addEventListener("click", () => {
+    window.open(googleLinks[currentIndex], "_blank");
+  });
+
+  const viewMoreModal = document.getElementById("viewmore-modal");
+  const viewMoreBtn = document.querySelector(".view-more");
+  const closeViewMore = document.querySelector(".close-viewmore");
+  const modalContent = viewMoreModal.querySelector("div");
+
+  viewMoreBtn.addEventListener("click", () => {
+    modalContent.innerHTML = `<p><strong><h1>${titles[currentIndex]}</h1></strong>: ${viewMoreContents[currentIndex]}</p>`;
+    viewMoreModal.style.display = "block";
+  });
+
+  closeViewMore.addEventListener("click", () => {
+    viewMoreModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === viewMoreModal) {
+      viewMoreModal.style.display = "none";
+    }
+  });
+
+  // Initial load
+  changeMainContent(0);
+
+  function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("active");
+}
+</script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

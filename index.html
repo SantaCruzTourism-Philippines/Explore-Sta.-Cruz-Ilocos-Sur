@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Santa Cruz</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Fugaz+One&family=Inter:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Pacifico&family=Protest+Strike&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo">
+      <img class="logo1" style="width:8vw; height:10vh;" src="assets/fMarchLogo.png" alt="Logo 1">
+      <img class="logo2" src="assets/staCruzLogo.png" alt="Logo 2">
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="navbar">
+      <a href="index.html"><u>Home</u></a>
+    
+      <div class="dropdown">
+        <a href="#">Attractions</a>
+        <div class="dropdown-content">
+    
+          <!-- Nested Dropdown: Potential -->
+          <div class="dropdown-sub">
+            <a href="#">Potential Tourist Spots ▸</a>
+            <div class="dropdown-sub-content">
+              <a href="beaches.html">Fine Sand Beaches</a>
+              <a href="greenhills.html">Greenhills</a>
+              <a href="mangroveFarms.html">Mangrove Farms</a>
+              <a href="scmunicipalHall.html">Other Facilities</a>
+            </div>
+          </div>
+    
+          <!-- Nested Dropdown: Emerging -->
+          <div class="dropdown-sub">
+            <a href="#">Emerging Tourist Spots ▸</a>
+            <div class="dropdown-sub-content">
+              <a href="churches.html">Churches</a>
+              <a href="waterfalls.html">Waterfalls</a>
+              <a class="lastA" style="  padding-bottom:100px;" href="historicalPlace.html">Historical Tourism</a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      <a href="townProducts.html">Town Products</a>
+      <a href="hotelAndResorts.html">Hotel & Resorts</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="tourismCircuit.html" class="active">Daytrips</a>
+      <a href="index.html#about-footer">About Us</a>
+    </nav>
+    
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" style="  background: url('assets/munihall.jpg') no-repeat center center / cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6vw;
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);">
+    <div class="hero-text">
+      <h1>EXPLORE!!</h1>
+      <h2 style="font-size:37px;">S A N T A &nbsp; C R U Z</h2><hr>
+      <p class="hero-p">We Offer 20 tourism sites, for you to enjoy...<br>Nature. Sun and Beach. Cultural Tourism</p>
+      
+    </div>
+  </section>
+
+  <!--explore Now-->
+
+  <!-- Scrollable Places Section -->
+  <section class="places-wrapper" id="explore-section" style="
+    background: url('assets/exploreNow.jpg') no-repeat center center / cover;
+    height: 110vh;
+    padding: 40px 20px;
+  ">
+    <h1 style="color:#ffffff; position:relative; z-index:4; margin-top:50px;">Explore Now</h1>
+    <div class="slider-container">
+    <div class="places-slider">
+      <div class="place-card" alt="The Municipal Hall">
+        <a href="scmunicipalHall.html" ><img src="assets/munihall.jpg" alt="Municipal Hall"></a>
+        <h3><a class="places" href="scmunicipalHall.html">Municipal Hall</a></h3>
+        <p>Come and visit the home of one of the richest municipalties which is the municipality of Sta. Cruz in the province of Ilocos Sur</p>
+      </div>
+      <div class="place-card">
+        <a href="churches.html"><img src="assets/churches.jpg" alt="Churches"></a>
+        <h3><a class="places" href="churches.html">CHURCHES</a></h3>
+        <p>Sta. Cruzians take pride in their historic churches, featuring designs inspired by some of the world’s most renowned cathedrals. The town is committed to preserving and enhancing these sacred sites, inviting tourists to witness their timeless beauty.</p>
+      </div>
+      <div class="place-card">
+        <a href="waterfalls.html"><img src="assets/falls.jpg" alt="Waterfalls"></a>
+        <h3><a class="places" href="waterfalls.html">WATERFALLS</a></h3>
+        <p>Discover the hidden gems of Sta. Cruz, Ilocos Sur — where majestic waterfalls cascade down lush mountains, breathing life into the land. Come and explore the natural beauty that defines this remarkable municipality.</p>
+      </div>
+      <div class="place-card">
+      <a href="mangroveFarms.html"><img src="assets/mangroveFarm.jpg" alt="Mangrove Farms"></a>
+        <h3><a class="places" href="mangroveFarms.html">MANGROVE FARMS</a></h3>
+        <p>Some places are waiting to be discovered, to shine from obscurity into the spotlight. One such place is the lush mangroves of Sta. Cruz, Ilocos Sur — a hidden sanctuary revealing its beauty through thriving greenery and natural charm.</p>
+      </div>
+      <div class="place-card">
+        <a href="beaches.html"><img src="assets/beach.jpg" alt="Beaches"></a>
+        <h3><a class="places" href="beaches.html">BEACHES</a></h3>
+        <p>The municipality of Sta cruz, has most of its barangays alongside the beaches, which locals and even tourist enjoy to swim onto. Come and Swim with the locals and be treated as a local.</p>
+      </div>
+      <div class="place-card">
+        <a href="greenhills.html"><img src="assets/daliganGreenhills.jpg" alt="Greenhills"></a>
+        <h3><a class="places" href="greenhills.html">GREENHILLS</a></h3>
+        <p>High in the mountains of Sta. Cruz, Ilocos Sur, nature unveils its quiet beauty — where grass sways with the wind and hills are blanketed with trees and greenery. This serene landscape is cherished by locals and draws curious travelers seeking peace and scenic views.</p>
+      </div>
+      <div class="place-card" alt="Historical Place">
+        <a href="historicalPlace.html"><img src="assets/kiosk.jpg" alt="Historical place"></a>
+        <h3><a class="places" href="historicalPlace.html">Historical places</a></h3>
+        <p>Spanish missionaries played a key role in the town's development, establishing religious communities and naming settlements after religious figures or symbols.</p>
+      </div>
+      <div class="place-card" id="imaginary-cards">
+      </div>
+      <div class="place-card" id="imaginary-cards">
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="about-footer">
+    <div class="footer-container">
+      <!-- Company Info -->
+      <div class="footer-section">
+        <h2>Santa Cruz</h2>
+        <p>Acknowledgement Our sincerest gratitude goes out to all offices and personnel involved in the preparation of this <strong>Municipal Tourism Development Plan 2024-2029</strong>, particularly the various departments of LGU – Sta. Cruz, Ilocos Sur and the 49 Barangay Local Government Units of this LGU for their assistance and cooperation especially during data gathering. We would also like to thank the National Anti-Poverty Commission and the Department of Tourism – Regional Office I for extensively providing technical assistance and for unselfishly devoting their time and expertise in the preparation of this plan.  We would also like to express our heartfelt thanks and appreciation to CGV the Explorer for allowing us to use his well composed, high resolution pictures that further highlighted the beauty of the tourism sites of Sta. Cruz. Lastly, this plan would not be completed without the leadership of Mayor <strong><u>Teresita C. Valle</u></strong> and <strong><u>Virgilio J. Valle</u></strong>. Their strong commitment to tourism development served as the motivation in the completion of this plan.<br>
+          May this plan serve as a roadmap to guide the current and future generations towards achieving our vision of a progressive and sustainable Sta. Cruz tourism.
+          <br>MTDP Technical Working Group</p>
+      </div>
+  
+      <!-- About Us -->
+      <div class="footer-section">
+        <h2>About Us</h2>
+        <p><strong>Tourism Office</strong></p>
+        <ul>
+          <li>Ms.</li> <!--you can edit here names for the tourism office.  -->
+          <li>Ms.</li>
+          <li>MS.</li>
+          <li>Ms.</li>
+          <li>Ms.</li>
+          <li>Ms.</li>
+        </ul>
+        <p><strong>Student Intern/Dev</strong><br>Joebert Tababan</p>
+      </div>
+  
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h2>Contact </h2>
+        <p>Email: stacruztourism38@gmail.com</p>
+        <p>Address: Municipal Hall, Santa Cruz, Ilocos Sur</p>
+
+      <!-- References -->
+      <div class="footer-section" style="margin-top:50px;">
+        <h2>References/Credits</h2>
+        <p> CGV The Explorer</p>
+        <p>Paul Hermosura</p>
+        <p></p>
+      </div>
+    </div>
+    </div>
+  
+    <div class="footer-bottom">
+      &copy; 2025 MPDC (Santa Cruz Ilocos Sur). All rights reserved. 
+    </div>
+  </footer>
+  
+  <script>
+      //responsiveness
+
+      function toggleMenu() {
+    document.querySelector(".navbar").classList.toggle("active");
+  }
+  </script>
+</body>
+</html>
